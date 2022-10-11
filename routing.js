@@ -1,0 +1,17 @@
+const express = require('express');
+const app = express();
+
+app.get('', (req, res)=>{
+    console.log('data sent by browser ==>>', req.query.name);
+    res.send("Welcome => " + req.query.name);
+});
+
+app.get('/about', (req, res)=>{
+    res.send("Hello, this is About page");
+});
+
+app.get('/help', (req, res)=>{
+    res.send("Welcome, this is Help page");
+});
+
+app.listen(4500); 
